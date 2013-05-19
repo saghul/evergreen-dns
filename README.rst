@@ -1,7 +1,7 @@
 
-==================================================
-evergreen-dns: Simple DNS resolution for Evergreen
-==================================================
+================================================
+evergreen-dns: Simple DNS resolver for Evergreen
+================================================
 
 Evergreen-DNS provides a simple way for doing asynchronous DNS resolutions
 with a synchronous interface by combining `pycares <https://github.com/saghul/pycares>`_ and
