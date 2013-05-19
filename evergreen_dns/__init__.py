@@ -24,8 +24,8 @@ query_type_map = {'A'     : pycares.QUERY_TYPE_A,
 
 class DNSResolver(object):
 
-    def __init__(self, nameservers=None):
-        self._channel = pycares.Channel(sock_state_cb=self._sock_state_cb)
+    def __init__(self, nameservers=None, **kwargs):
+        self._channel = pycares.Channel(sock_state_cb=self._sock_state_cb, **kwargs)
         if nameservers:
             self._channel.servers = nameservers
         self._loop = evergreen.current.loop
