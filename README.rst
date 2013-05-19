@@ -21,7 +21,7 @@ Example:
     print(resolver.query('google.com','A'))
 
 
-The following query types are supported: A, AAA, CNAME, MX, NAPTR, NS, PTR, SOA, SRV, TXT.
+The following query types are supported: A, AAAA, CNAME, MX, NAPTR, NS, PTR, SOA, SRV, TXT.
 
 
 Running the test suite
