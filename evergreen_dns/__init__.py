@@ -5,6 +5,8 @@ import pycares
 from evergreen_dns import error
 from evergreen.futures import Future
 
+__version__ = '0.0.1'
+
 __all__ = ('DNSResolver', 'error')
 
 
