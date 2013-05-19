@@ -74,6 +74,9 @@ class DNSResolver(object):
             self._write_fds.discard(fd)
             self._loop.remove_reader(fd)
             self._loop.remove_writer(fd)
+            if not self._read_fds and not self._write_fds:
+                self._timer.cancel()
+                self._timer = None
 
     def _handle_event(self, fd, event):
         read_fd = pycares.ARES_SOCKET_BAD
@@ -86,5 +89,5 @@ class DNSResolver(object):
 
     def _timer_cb(self):
         self._channel.process_fd(pycares.ARES_SOCKET_BAD, pycares.ARES_SOCKET_BAD)
-        self._timer = None
+        self._timer = self._loop.call_later(1, self._timer_cb)
 
